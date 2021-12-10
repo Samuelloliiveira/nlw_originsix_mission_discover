@@ -1,0 +1,34 @@
+/* ------settings------ */
+* {
+    margin: 0;
+    padding: 0;
+    border: none;
+    text-decoration: none;
+    box-sizing: border-box;
+}
+
+:root {
+    --black-blue: #0D114F;
+    --light-blue: #E0ECFF;
+    --white: #FAFAFA;
+    --blue: #3485FF;
+    --red: #E83F5B;
+    --overlay: #040911;
+    --background: #FBFCFF;
+    --icons-details: #A5B0C1;
+
+    --grey-dark: #4D5E77;
+    --gray-blue: #A1B2CD;
+    --gray-light: #E5EAF1;
+
+    /* 1rem = 16px(user agent = 100% ) */
+    font-size: 62.5%; /* = 10px */
+}
+
+h2 {
+    /* 16px antes era 1.75, agora basta 
+    dividir por 10px(novo valor user agent) 
+    ou seja 28px / 10 = 2.8rem*/
+
+    font-size: 2.8rem;
+}
