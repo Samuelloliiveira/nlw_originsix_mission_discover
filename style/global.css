@@ -25,10 +25,36 @@
     font-size: 62.5%; /* = 10px */
 }
 
-h2 {
-    /* 16px antes era 1.75, agora basta 
-    dividir por 10px(novo valor user agent) 
-    ou seja 28px / 10 = 2.8rem*/
+body {
+    height: 100vh;
+    /* width: 100vw; */
+    background: var(--background);
+}
 
-    font-size: 2.8rem;
+body, button, input, textarea {
+    /* clamp é um intervalo de tamanho
+    minimo 14px menor tela
+    padrão 1.6rem 
+    tela muito grande 2vw */
+    font-size: clamp(14px, 1.6rem, 2vw);
+
+    font-family: 'Open Sans', sans-serif;
+    /* font-family: 'Poppins', sans-serif; */
+}
+
+.content {
+    width: 100%;
+    margin: 0 auto;
+}
+
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px; /*fica fora da tela*/
+    overflow: hidden; /*não cria barra de rolagem*/
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
 }
