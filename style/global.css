@@ -58,3 +58,54 @@ body, button, input, textarea {
     white-space: nowrap;
     border-width: 0;
 }
+
+/*----- header ----- */
+.content header {
+    width: 80%;
+    margin: 3.5rem auto;
+}
+
+/* .content header img {
+    width: 16.7rem;
+} */
+
+/*----- input and buttons ----- */
+input, button, .button {
+    border-radius: .8rem;
+    height: 5rem;
+}
+
+button, .button {
+    font-family: 'Poppins';
+    font-weight: 500;
+    line-height: 0; /*uma margem embaixo do texto*/
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: var(--blue);
+    color: var(--white);
+
+    transition: filter .2s;
+
+    cursor: pointer;
+}
+
+button:hover, .button:hover {
+    filter: brightness(1.2);/*aplica brilho*/
+}
+
+button > img, 
+.button > img {
+    margin-right: 1rem;
+    width: 2rem;
+}
+
+button.outlined,
+.button.outlined {
+    background: var(--white);
+    color: var(--blue);
+
+    border: .2rem solid var(--blue);
+}
