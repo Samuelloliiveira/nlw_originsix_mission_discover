@@ -12,7 +12,7 @@ const modalDescription = document.querySelector('.modal p')
 const modalButton = document.querySelector('.modal button')
 
 //Pegar todos os botões com a classe check
-const checkButtons = document.querySelectorAll(".action a.check")
+const checkButtons = document.querySelectorAll(".actions a.check")
 
 //adicionando o evento a cada check dentro checkButtons
 checkButtons.forEach(button =>{
@@ -20,18 +20,30 @@ checkButtons.forEach(button =>{
 })
 
 /** ABRIR MODAL QUANDO CLICAR EM EXCLUIR */
-const deleteButton = document.querySelectorAll('.action a.delete')
+const deleteButton = document.querySelectorAll('.actions a.delete')
 
 deleteButton.forEach(button => {
     button.addEventListener('click', (event) => handleClick(event, false))
 })
 
-//função que inicia a opção de abrir e fechar o modal
+/** função que inicia a opção de abrir e fechar o modal
+ * além de criar outros métodos 
+*/
 function handleClick(event, check = true) {
     //não passar nada pela url
     event.preventDefault()
 
     const text = check ? 'Marcar como lida' : 'Excluir'
+    //pegando a ação do formulário do modal
+    const slug = check ? 'check' : 'delete'
+    //pegando o id da Sala
+    const roomId = document.querySelector('#room-id').dataset.id
+    //pegando id da perguntas
+    const questionId = event.target.dataset.id
+
+    //setando os atributos para o actions do form que esta no modal
+    const form = document.querySelector('.modal form')
+    form.setAttribute("actions", `/question/${roomId}/${questionId}/${slug}`)
 
     //modificando inforções do Modal
     modalTitle.innerHTML = `${text} esta pergunta`

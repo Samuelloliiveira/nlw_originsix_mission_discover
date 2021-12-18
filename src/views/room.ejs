@@ -25,7 +25,7 @@
             </a>
 
             <div class="buttons">
-                <div class="button outlined">
+                <div class="button outlined" id="room-id" data-id="323243">
                     <p>#323243</p>
                     <img src="./images/copy.svg" alt="Copiar número da sala">
                 </div>
@@ -69,14 +69,14 @@
                                 <p>Qual a diferença entre const, var, e let no JS?</p>
                             </div>
                         </div>
-                        <div class="action">
-                            <a href="#" class="check">
+                        <div class="actions">
+                            <a href="#" class="check" data-id="2">
                                 <img src="./images/check.svg" alt="Marcar como lida">
-                                <p>Marcar como lida</p>
+                                Marcar como lida
                             </a>
-                            <a href="#" class="delete">
+                            <a href="#" class="delete" data-id="2">
                                 <img src="./images/trash.svg" alt="Excluir">
-                                <p>Excluir</p>
+                                Excluir
                             </a>
                         </div>
                     </div>
@@ -93,14 +93,14 @@
                                 </p>
                             </div>
                         </div>
-                        <div class="action">
-                            <a href="#" class="check">
+                        <div class="actions">
+                            <a href="#" class="check" data-id="3">
                                 <img src="./images/check.svg" alt="Marcar como lida">
-                                <p>Marcar como lida</p>
+                                Marcar como lida
                             </a>
-                            <a href="#" class="delete">
+                            <a href="#" class="delete" data-id="3">
                                 <img src="./images/trash.svg" alt="Excluir">
-                                <p>Excluir</p>
+                                Excluir
                             </a>
                         </div>
                     </div>
@@ -111,13 +111,13 @@
                                 <img src="./images/user.svg" alt="Avatar">
                             </div>
                             <div class="question">
-                                <p>O que é javascript?</p>
+                                O que é javascript?
                             </div>
                         </div>
-                        <div class="action">
-                            <a href="#" class="delete">
+                        <div class="actions">
+                            <a href="#" class="delete" data-id="1">
                                 <img src="./images/trash.svg" alt="Excluir">
-                                <p>Excluir</p>
+                                Excluir
                             </a>
                         </div>
                     </div>
@@ -133,7 +133,12 @@
             <h2>Excluir pergunta</h2>
             <p>Tem certeza que você deseja excluir esta pergunta?</p>
 
-            <form action="">
+            <!-- No action estamos passando a "rota". 
+                O lugar que vai receber os dados.
+                /room/:room/:question/:action
+                Mas vamos fazer isso no Javascript atráves da DOM
+            -->
+            <form action="#" method="POST">
                 <label class="sr-only" for="password"></label>
                 <input type="password" name="password" id="password" placeholder="Digite sua senha">
 

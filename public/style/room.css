@@ -95,27 +95,28 @@
 }
 
 .question-wrapper .question-content,
-.question-wrapper .action,
-.question-wrapper .action a {
+.question-wrapper .actions,
+.question-wrapper .actions a {
     display: flex;
     align-items: flex-start;
     gap: 1.6rem;
 }
 
-.question-wrapper .action {
+.question-wrapper .actions {
     justify-content: flex-end;
     gap: 2.4rem;
 }
 
-.question-wrapper .question-content p {
+.question-wrapper .question-content {
     word-break: break-word; /*para que não quebre o layout quando*/
     display: flex;
     align-items: center;
     min-height: 5.5rem;
 }
 
-.question-wrapper .action a {
+.question-wrapper .actions a {
     gap: .8rem;
+    align-items: center;
 }
 
 /* o seletor + pega o irmão de um elemento */
