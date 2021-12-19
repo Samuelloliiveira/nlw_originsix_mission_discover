@@ -12,6 +12,9 @@ server.use(express.static('public'))
 // path esta pegando o caminho da pasta views
 server.set('views', path.join(__dirname, 'views'))
 
+//configurando Middlewares
+server.use(express.urlencoded({extended: true}))
+
 server.use(routes)
 
 // criando uma porta

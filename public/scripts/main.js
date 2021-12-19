@@ -19,7 +19,6 @@ checkButtons.forEach(button =>{
     button.addEventListener("click", handleClick)
 })
 
-/** ABRIR MODAL QUANDO CLICAR EM EXCLUIR */
 const deleteButton = document.querySelectorAll('.actions a.delete')
 
 deleteButton.forEach(button => {
@@ -41,9 +40,9 @@ function handleClick(event, check = true) {
     //pegando id da perguntas
     const questionId = event.target.dataset.id
 
-    //setando os atributos para o actions do form que esta no modal
-    const form = document.querySelector('.modal form')
-    form.setAttribute("actions", `/question/${roomId}/${questionId}/${slug}`)
+    //setando os atributos para o action do form que esta no modal
+    const form = document.querySelector(".modal form")
+    form.setAttribute("action", `/question/${roomId}/${questionId}/${slug}`)
 
     //modificando inforções do Modal
     modalTitle.innerHTML = `${text} esta pergunta`
