@@ -1,5 +1,3 @@
-//AQUI VAI FICAR TODOS O CÓDIGO DE EVENTOS
-
 //inportando o arquivo modal
 import Modal from './modal.js'
 

@@ -39,5 +39,17 @@ module.exports = {
         await db.close() //fechando conexão com o banco
 
         res.redirect(`/room/${roomId}`)//redirecioando url
+    },
+
+    async open(req, res) {
+        const db = await Database()
+        const roomId = req.params.room
+
+        //buscando as perguntas do banco de dados de acordo com o id da Sala
+        //ele cria um array com as perguntas lidas e outro com as perguntas não lida
+        const questions = await db.all(`SELECT * FROM questions WHERE room = ${roomId} and read = 0`)
+        const questionsRead = await db.all(`SELECT * FROM questions WHERE room = ${roomId} and read = 1`)
+    
+        res.render('room', {roomId: roomId, questions: questions, questionsRead: questionsRead})
     }
 }
